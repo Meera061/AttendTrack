@@ -1,0 +1,33 @@
+<?php
+include "db_connection.php";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (!isset($_POST['attendance']) || empty($_POST['attendance']) || !isset($_POST['room_no'])) {
+        echo "<script>alert('No attendance data received!'); window.location.href='take_attendance.php';</script>";
+        exit();
+    }
+
+    $attendance = $_POST['attendance'];
+    $room_no = $_POST['room_no'];
+    $date = date("Y-m-d");
+
+    foreach ($attendance as $roll_no => $status) {
+        $query = "SELECT id, student_name FROM students WHERE roll_no = ?";
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("s", $roll_no);
+        $stmt->execute();
+        $stmt->bind_result($student_id, $student_name);
+        $stmt->fetch();
+        $stmt->close();
+
+        $insertQuery = "INSERT INTO attendance (student_id, roll_no, student_name, date, status) VALUES (?, ?, ?, ?, ?)";
+        $stmt2 = $conn->prepare($insertQuery);
+        $stmt2->bind_param("issss", $student_id, $roll_no, $student_name, $date, $status);
+        $stmt2->execute();
+        $stmt2->close();
+    }
+
+    echo "<script>alert('Attendance for Room $room_no saved!'); window.location.href='take_attendance.php';</script>";
+    exit();
+}
+?>

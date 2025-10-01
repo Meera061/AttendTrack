@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Jason Ladies Hostel</title>
+
+    <!-- ====== Styles ====== -->
+    <style>
+        /* ------- Base page ------- */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            margin-bottom:100px;
+        }
+        header {
+            background-color: #002366;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            background-color: #002366;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+             margin-bottom:2px;
+        }
+        nav ul li {
+           display: inline;
+            padding: 15px 20px;
+        }
+        nav ul li a {
+           color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px;
+            transition: all 0.3s;
+        }
+        nav ul li a:hover {
+              background-color: #002366;
+            color: white;
+            box-shadow: 0px 0px 10px #ffcc00;
+        }
+        .container {
+            padding: 50px;
+        }
+        h2 {
+            margin-top: 40px;
+            color: #002366;
+        }
+
+        /* ------- NEW facility card grid ------- */
+        .card-grid {
+            display: grid;
+            gap: 1.8rem;
+            grid-template-columns: repeat(auto-fit, minmax(100x, 1fr));
+            margin-bottom: 40px;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 14px;
+            box-shadow: 0 4px 14px rgba(0,0,0,.08);
+            padding: 50px;
+            text-align: center;
+            transition: transform .3s, box-shadow .3s;
+            display: inline-block;
+           margin-right: 40px;
+           margin-bottom:40px;
+        }
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 18px rgba(0,0,0,.12);
+        }
+        .card img {
+            width: 60%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+        .card h3 {
+            margin: .5rem 0 .6rem;
+            font-size: 1.25rem;
+            color: #002366;
+        }
+        .card p {
+            font-size: .95rem;
+            line-height: 1.45;
+            color: #555;
+        }
+
+        /* ------- Feature boxes (left as-is) ------- */
+        .feature-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .feature-column {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .feature-box {
+            width: 150px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+            transition: 0.3s;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .feature-box:hover {
+            box-shadow: 0 0 20px gold;
+            transform: scale(1.1);
+        }
+
+        /* ------- Footer ------- */
+        footer {
+            background-color: #002366;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* ------- Responsive tweaks ------- */
+        @media (max-width: 480px) {
+            nav ul li { padding: 10px; }
+            .feature-box { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ====== Header / Nav ====== -->
+    <header><h1>Jason Ladies Hostel</h1></header>
+
+    <nav>
+        <ul>
+            <li><a href="home.php">Home</a></li>
+            <li><a href="about.html">About&nbsp;Us</a></li>
+            <li><a href="contact.php">Contact&nbsp;Us</a></li>
+            <li><a href="login.php">Login</a></li>
+        </ul>
+    </nav>
+
+    <!-- ====== Main content ====== -->
+    <div class="container">
+        <h2>About Us</h2>
+        <p>Jason Ladies Hostel provides the best facilities for students and working professionals, ensuring comfort and security.</p>
+
+        <!-- ====== Our Facilities (picture cards) ====== -->
+        <h2>Our Facilities</h2>
+        <div class="card-grid">
+<center>
+            <!-- Card 1 -->
+            <article class="card">
+                <img src="washingmachine.png" alt="Free Washing Machines">
+                <h3>Free Washing Machines</h3>
+                <p>Wash and dry your clothes any time—no tokens needed.</p>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="card">
+                <img src="wifi.png" alt="High-Speed Wi-Fi">
+                <h3>High-Speed Wi-Fi</h3>
+                <p>Unlimited Internet in every room and common space.</p>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="card">
+                <img src="lift.png" alt="Lift Service">
+                <h3>Lift Service</h3>
+                <p>Effortless access to every floor with our modern elevator.</p>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="card">
+                <img src="auditorium.png" alt="Mini Auditorium">
+                <h3>Mini Auditorium</h3>
+                <p>Host movie nights, seminars, and celebrations in-house.</p>
+            </article>
+            </center>
+
+            <!-- Duplicate / edit more cards the same way -->
+        </div>
+
+        <!-- ====== Additional Features (text boxes) ====== -->
+        <h2>We Also Have These Facilities</h2>
+        <div class="feature-container">
+            <!-- Column 1 -->
+            <div class="feature-column">
+                <div class="feature-box">Prominent Location</div>
+                <div class="feature-box">Fully Furnished A/C & Non-A/C Rooms</div>
+                <div class="feature-box">Free Wi-Fi</div>
+                <div class="feature-box">Intercom</div>
+            </div>
+            <!-- Column 2 -->
+            <div class="feature-column">
+                <div class="feature-box">Hygienic Food - Veg/Non-Veg</div>
+                <div class="feature-box">Lift Facility</div>
+                <div class="feature-box">Mini Auditorium</div>
+                <div class="feature-box">Indoor Games</div>
+            </div>
+            <!-- Column 3 -->
+            <div class="feature-column">
+                <div class="feature-box">Beauty Parlour</div>
+                <div class="feature-box">24/7 Security</div>
+                <div class="feature-box">Under CCTV Surveillance</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====== Footer ====== -->
+    <footer>
+        <p>&copy; 2025 Jason Ladies Hostel. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<?php
+include 'db_connection.php'; // Database connection
+
+$query = "SELECT student_name, date FROM absent_students ORDER BY date DESC";
+$result = mysqli_query($conn, $query);
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Absent Students History</title>
+</head>
+<body>
+
+<h2>Absent Students History</h2>
+
+<table border="1">
+    <tr>
+        <th>Student Name</th>
+        <th>Date</th>
+    </tr>
+    <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+        <tr>
+            <td><?php echo htmlspecialchars($row['student_name']); ?></td>
+            <td><?php echo htmlspecialchars($row['date']); ?></td>
+        </tr>
+    <?php } ?>
+</table>
+
+</body>
+</html>
+
+<?php mysqli_close($conn); ?>
