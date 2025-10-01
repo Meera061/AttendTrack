@@ -24,21 +24,6 @@ Backend: PHP
 
 Database: MySQL
 
-How to Run:
-
-Clone the repository:
-
-git clone https://github.com/yourusername/hostel-attendance.git
-
-
-Import the database or let the app auto-create tables in MySQL.
-
-Update db_connection.php with your MySQL credentials.
-
-Open the project in a local server environment (XAMPP, WAMP, or MAMP).
-
-Access add_student.php to add students and take_attendance.php to mark attendance.
-
 Use Case:
 Ideal for small hostels, classrooms, or workshops where tracking daily attendance is essential.
 <img width="1817" height="868" alt="1" src="https://github.com/user-attachments/assets/73cbba8e-080f-4f3b-a8bd-9862ba0a8bd0" />
